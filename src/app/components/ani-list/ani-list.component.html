@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <h4 class="h2 text-center mt-4">{{error}}</h4>
+    <ng-template *ngIf="api === 'bazon'; then bazonTemplate; else kodikTemplate"></ng-template>
+  </div>
+</div>
+
+<ng-template #bazonTemplate>
+  <div class="col-md-4 mb-3 col-lg-3 d-flex align-items-stretch" *ngFor="let item of items">
+    <div class="card" style="width: 18rem;">
+      <img [src]="item.info?.poster" class="card-img-top" [alt]="item.info?.rus">
+      <div class="card-body">
+        <h5 class="card-title">{{item.info?.rus}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Год: {{item.info.year}}</li>
+        <li class="list-group-item">Качество: {{item.quality}} - {{item.max_qual}}</li>
+        <li class="list-group-item">Озвучка: {{item.translation}}</li>
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary mt-auto" (click)="watchThis(item)">Смотреть</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #kodikTemplate>
+  <div class="col-md-4 mb-3 col-lg-3 d-flex align-items-stretch" *ngFor="let item of items">
+    <div class="card" style="width: 18rem;">
+      <img src="https://st.kp.yandex.net/images/film_iphone/iphone360_{{item.kinopoisk_id}}.jpg" class="card-img-top" [alt]="item.title">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Год: {{item.year}}</li>
+        <li class="list-group-item">Тип: {{item.type}}</li>
+        <li class="list-group-item">Качество: {{item.quality}}</li>
+        <li class="list-group-item">Озвучка: {{item.translation?.title}}</li>
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary" (click)="watchThis(item)">Смотреть</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
