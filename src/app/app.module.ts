@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AniListComponent } from './components/ani-list/ani-list.component';
-import { AniItemComponent } from './components/ani-item/ani-item.component';
-import { HomeComponent } from './home/home.component';
+import { AniListComponent } from './pages/ani-list/ani-list.component';
+import { AniItemComponent } from './pages/ani-item/ani-item.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [

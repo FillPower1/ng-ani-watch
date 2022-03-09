@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AniItemComponent } from './components/ani-item/ani-item.component'
-import { HomeComponent } from './home/home.component'
-import { AniListComponent } from './components/ani-list/ani-list.component'
+import { HomeComponent } from './pages/home/home.component'
+import { AniListComponent } from './pages/ani-list/ani-list.component'
+import { AniItemComponent } from './pages/ani-item/ani-item.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
